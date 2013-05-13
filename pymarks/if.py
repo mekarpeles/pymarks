@@ -10,6 +10,7 @@
 
 from utils import ptimeit
 
+# Prereq: Python 2.5+
 ptimeit("x = 5 if False else 4", desc="inline if")
 
 ptimeit("x = 5 if False else 4", """if False:
