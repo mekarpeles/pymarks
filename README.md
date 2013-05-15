@@ -1,9 +1,33 @@
 # pymarks
 
-Various benchmarks for common operations in python
+Various benchmarks for common operations in python.
 
-* Reversing lists
+## Outline
+
 * conditionals, single line 
+* identicality / uniqueness
+* reversing lists
+
+## Conditionals
+
+Different approaches to writing if-statments. Tests repeated twice
+since the values were fairly close:
+
+    $ python if.py 
+    inline if: 100000 loops, best of 3: 0.00465488433838 usec per loop
+    tuple evaluation: 100000 loops, best of 3: 0.00594711303711 usec per loop
+    multi-line if: 100000 loops, best of 3: 0.00483393669128 usec per loop
+
+    $ python if.py 
+    inline if: 100000 loops, best of 3: 0.00473403930664 usec per loop
+    tuple evaluation: 100000 loops, best of 3: 0.00586009025574 usec per loop
+    multi-line if: 100000 loops, best of 3: 0.00503301620483 usec per loop
+
+### Conclusions
+
+* inline if statements seemed to be slightly more performant than
+  multi-line if statements, probaly due to latency in interpretation (parsing multiple lines).
+* Tuple evaluation was the slowest, possibly due to the inefficiencies of allocating mem for a tuple.
 
 ## Identicality
 
